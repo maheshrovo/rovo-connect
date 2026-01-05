@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rovo Automation - 26 Days Progress Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="slide-counter" id="slideCounter">1 / 20</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-arrows">
+        <button class="nav-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Slide Container -->
+    <div class="presentation" id="presentation">
+
+        <!-- Slide 1: Title Slide -->
+        <section class="slide active" id="slide1">
+            <div class="slide-content title-slide">
+                <div class="logo-container animate-in">
+                    <div class="logo-glow"></div>
+                    <img src="logos/rovo.png" alt="Rovo Automation" class="logo">
+                </div>
+                <h1 class="main-title animate-in delay-1">26 Days Progress Report</h1>
+                <p class="subtitle animate-in delay-2">Transforming Industries with Intelligent Automation</p>
+                <div class="date-badge animate-in delay-3">
+                    <i class="fas fa-calendar-alt"></i>
+                    January 2026
+                </div>
+                <!-- <div class="presenter-info animate-in delay-4">
+                    <i class="fas fa-user-tie"></i>
+                    Presented to: Esteemed Investors
+                </div> -->
+            </div>
+            <div class="decorative-elements">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Agenda -->
+        <!-- <section class="slide" id="slide2">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-list-check"></i> Today's Agenda</h2>
+                <div class="agenda-grid">
+                    <div class="agenda-item animate-in">
+                        <div class="agenda-number">01</div>
+                        <div class="agenda-text">Vision & Mission</div>
+                    </div>
+                    <div class="agenda-item animate-in delay-1">
+                        <div class="agenda-number">02</div>
+                        <div class="agenda-text">Month 1 Achievements</div>
+                    </div>
+                    <div class="agenda-item animate-in delay-2">
+                        <div class="agenda-number">03</div>
+                        <div class="agenda-text">Product Portfolio</div>
+                    </div>
+                    <div class="agenda-item animate-in delay-3">
+                        <div class="agenda-number">04</div>
+                        <div class="agenda-text">Client Engagements</div>
+                    </div>
+                    <div class="agenda-item animate-in delay-4">
+                        <div class="agenda-number">05</div>
+                        <div class="agenda-text">R&D Breakthroughs</div>
+                    </div>
+                    <div class="agenda-item animate-in delay-5">
+                        <div class="agenda-number">06</div>
+                        <div class="agenda-text">Revenue Pipeline</div>
+                    </div>
+                    <div class="agenda-item animate-in delay-6">
+                        <div class="agenda-number">07</div>
+                        <div class="agenda-text">Road Ahead</div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Slide 3: Vision & Mission -->
+        <section class="slide" id="slide3">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-rocket"></i> Our Vision & Mission</h2>
+                <div class="vision-mission-container">
+                    <div class="vm-card vision animate-in">
+                        <div class="vm-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Vision</h3>
+                        <p>To become India's most trusted industrial automation and digital transformation partner,
+                            enabling smart factories, data-driven operations, and world-class manufacturing excellence
+                            across all sectors.</p>
+                    </div>
+                    <div class="vm-card mission animate-in delay-1">
+                        <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Mission</h3>
+                        <p>To support manufacturing excellence by bridging machine data, human intelligence, and modern
+                            technologies for the Industry 4.0 era.</p>
+                    </div>
+                </div>
+                <div class="focus-areas animate-in delay-2">
+                    <h4>Core Focus Areas</h4>
+                    <div class="focus-tags">
+                        <span class="tag">IoT Solutions</span>
+                        <span class="tag">AI & Machine Learning</span>
+                        <span class="tag">Industrial Automation</span>
+                        <span class="tag">Smart Manufacturing</span>
+                        <span class="tag">Digital Transformation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Executive Summary - Key Highlights -->
+        <section class="slide" id="slide4">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-trophy"></i> 26 Days: Executive Summary</h2>
+                <p class="slide-subtitle">Exceptional Progress in Our 26 Days of Operations</p>
+                <div class="highlight-grid">
+                    <div class="highlight-card gold animate-in">
+                        <i class="fas fa-rocket"></i>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Overall Target Achievement</span>
+                            <span class="highlight-value counter" data-target="320">0</span>
+                            <span class="highlight-unit">%</span>
+                        </div>
+                    </div>
+                    <div class="highlight-card blue animate-in delay-1">
+                        <i class="fas fa-building"></i>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Companies Reached</span>
+                            <span class="highlight-value counter" data-target="29">0</span>
+                        </div>
+                    </div>
+                    <div class="highlight-card green animate-in delay-2">
+                        <i class="fas fa-handshake"></i>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Physical Visits</span>
+                            <span class="highlight-value counter" data-target="32">0</span>
+                        </div>
+                    </div>
+                    <div class="highlight-card purple animate-in delay-3">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <div class="highlight-content">
+                            <span class="highlight-label">Quotations Submitted</span>
+                            <span class="highlight-value counter" data-target="4">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Target vs Achievement -->
+        <section class="slide" id="slide5">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-chart-bar"></i> Target vs Achievement</h2>
+                <p class="slide-subtitle">We Exceeded Every Goal Set for Month 1</p>
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <span>Metric</span>
+                        <span>Target</span>
+                        <span>Achieved</span>
+                        <span>Status</span>
+                    </div>
+                    <div class="comparison-row animate-in">
+                        <span class="metric-name"><i class="fas fa-building"></i> Company Visits</span>
+                        <span class="target">10</span>
+                        <span class="achieved">32</span>
+                        <span class="status exceeded"><i class="fas fa-arrow-up"></i> 320%</span>
+                    </div>
+                    <div class="comparison-row animate-in delay-1">
+                        <span class="metric-name"><i class="fas fa-paint-brush"></i> Brand Setup</span>
+                        <span class="target">Complete</span>
+                        <span class="achieved">100%</span>
+                        <span class="status complete"><i class="fas fa-check"></i> Done</span>
+                    </div>
+                    <div class="comparison-row animate-in delay-2">
+                        <span class="metric-name"><i class="fas fa-globe"></i> Website Launch</span>
+                        <span class="target">Go Live</span>
+                        <span class="achieved">Live</span>
+                        <span class="status complete"><i class="fas fa-check"></i> Done</span>
+                    </div>
+                    <div class="comparison-row animate-in delay-3">
+                        <span class="metric-name"><i class="fas fa-flask"></i> POCs Delivered</span>
+                        <span class="target">2</span>
+                        <span class="achieved">4</span>
+                        <span class="status exceeded"><i class="fas fa-arrow-up"></i> 200%</span>
+                    </div>
+                    <div class="comparison-row animate-in delay-4">
+                        <span class="metric-name"><i class="fas fa-box"></i> Products Prototyped</span>
+                        <span class="target">3</span>
+                        <span class="achieved">6</span>
+                        <span class="status exceeded"><i class="fas fa-arrow-up"></i> 200%</span>
+                    </div>
+                    <div class="comparison-row animate-in delay-5">
+                        <span class="metric-name"><i class="fas fa-share-alt"></i> Social Media Active</span>
+                        <span class="target">2 Platforms</span>
+                        <span class="achieved">3 Platforms</span>
+                        <span class="status exceeded"><i class="fas fa-arrow-up"></i> 150%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Completed Milestones -->
+        <section class="slide" id="slide6">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-flag-checkered"></i> Completed Milestones</h2>
+                <div class="milestone-timeline">
+                    <div class="milestone completed animate-in">
+                        <div class="milestone-icon"><i class="fas fa-palette"></i></div>
+                        <div class="milestone-content">
+                            <h4>Brand Creation & Corporate Identity</h4>
+                            <ul>
+                                <li>Company Logo & Brand Guidelines</li>
+                                <li>Corporate Letterhead & Envelope</li>
+                                <li>Company ID Cards</li>
+                                <li>Office Branding Templates</li>
+                            </ul>
+                        </div>
+                        <div class="milestone-status"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="milestone completed animate-in delay-1">
+                        <div class="milestone-icon"><i class="fas fa-bullhorn"></i></div>
+                        <div class="milestone-content">
+                            <h4>Marketing & Communication Materials</h4>
+                            <ul>
+                                <li>Website: rovoautomation.com</li>
+                                <li>Professional Visiting Cards</li>
+                                <li>Company Profile PDF</li>
+                                <li>Service/Product Catalog</li>
+                            </ul>
+                        </div>
+                        <div class="milestone-status"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                    <div class="milestone completed animate-in delay-2">
+                        <div class="milestone-icon"><i class="fas fa-share-nodes"></i></div>
+                        <div class="milestone-content">
+                            <h4>Brand Launch & Social Presence</h4>
+                            <ul>
+                                <li>LinkedIn Company Page Active</li>
+                                <li>Instagram Page Active</li>
+                                <li>Regular Content Publishing</li>
+                            </ul>
+                        </div>
+                        <div class="milestone-status"><i class="fas fa-check-circle"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Product Portfolio Overview -->
+        <section class="slide" id="slide7">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-cubes"></i> Our Product Portfolio</h2>
+                <p class="slide-subtitle">6 Innovative Products with Working Prototypes</p>
+                <div class="products-grid">
+                    <div class="product-card animate-in" onclick="this.classList.toggle('flipped')">
+                        <div class="product-front">
+                            <div class="product-icon"><i class="fas fa-network-wired"></i></div>
+                            <h4>RovoConnect</h4>
+                            <p class="product-tagline">Edge Intelligence Platform</p>
+                        </div>
+                        <div class="product-back">
+                            <p>Unified edge intelligence that transforms raw machine data into predictive insights,
+                                eliminating downtime and maximizing OEE in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-in delay-1" onclick="this.classList.toggle('flipped')">
+                        <div class="product-front">
+                            <div class="product-icon"><i class="fas fa-video"></i></div>
+                            <h4>RovoVision</h4>
+                            <p class="product-tagline">AI Visual Supervisor</p>
+                        </div>
+                        <div class="product-back">
+                            <p>AI-powered visual supervisor that automates safety and SOP compliance, transforming
+                                existing CCTV into real-time operational intelligence.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-in delay-2" onclick="this.classList.toggle('flipped')">
+                        <div class="product-front">
+                            <div class="product-icon"><i class="fas fa-fingerprint"></i></div>
+                            <h4>User Identification</h4>
+                            <p class="product-tagline">Secure Access Control</p>
+                        </div>
+                        <div class="product-back">
+                            <p>Advanced Face ID, biometric and RFID-based user identification for secure access control
+                                and workforce tracking.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-in delay-3" onclick="this.classList.toggle('flipped')">
+                        <div class="product-front">
+                            <div class="product-icon"><i class="fas fa-bell"></i></div>
+                            <h4>Andon System</h4>
+                            <p class="product-tagline">Real-time Alerts</p>
+                        </div>
+                        <div class="product-back">
+                            <p>Real-time visual management system that alerts teams about production issues, enabling
+                                quick response and minimizing downtime.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-in delay-4" onclick="this.classList.toggle('flipped')">
+                        <div class="product-front">
+                            <div class="product-icon"><i class="fas fa-chart-pie"></i></div>
+                            <h4>OEE Dashboard</h4>
+                            <p class="product-tagline">Performance Analytics</p>
+                        </div>
+                        <div class="product-back">
+                            <p>Comprehensive Overall Equipment Effectiveness dashboard providing real insights about
+                                production performance and efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="product-card animate-in delay-5" onclick="this.classList.toggle('flipped')">
+                        <div class="product-front">
+                            <div class="product-icon"><i class="fas fa-id-card-clip"></i></div>
+                            <h4>VisiTech</h4>
+                            <p class="product-tagline">Visitor Management</p>
+                        </div>
+                        <div class="product-back">
+                            <p>Smart visitor management system with digital check-in, badge printing, and real-time
+                                tracking for enhanced security.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="hint-text"><i class="fas fa-hand-pointer"></i> Click on any card to see details</p>
+            </div>
+        </section>
+
+        <!-- Slide 8: RovoVision Deep Dive -->
+        <section class="slide" id="slide8">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-video"></i> RovoVision - Product Deep Dive</h2>
+                <div class="product-detail-container">
+                    <div class="product-hero animate-in">
+                        <div class="product-hero-icon"><i class="fas fa-video"></i></div>
+                        <h3>AI-Powered Visual Supervisor</h3>
+                    </div>
+                    <div class="sub-products-grid">
+                        <div class="sub-product animate-in delay-1">
+                            <div class="sub-icon"><i class="fas fa-hard-hat"></i></div>
+                            <h5>PPE Detection</h5>
+                            <p>Automatic detection of safety gear violations with instant email alerts</p>
+                        </div>
+                        <div class="sub-product animate-in delay-2">
+                            <div class="sub-icon"><i class="fas fa-users"></i></div>
+                            <h5>NearMe (HeadCount)</h5>
+                            <p>BLE, RFID & AI Camera based real-time headcount tracking</p>
+                        </div>
+                        <div class="sub-product animate-in delay-3">
+                            <div class="sub-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <h5>Speed Tracking</h5>
+                            <p>Vehicle & forklift speed monitoring for warehouse safety</p>
+                        </div>
+                        <div class="sub-product animate-in delay-4">
+                            <div class="sub-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h5>Zone Monitoring</h5>
+                            <p>Restricted area intrusion detection and alerts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Focused Industries -->
+        <section class="slide" id="slide9">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-industry"></i> Focused Industries</h2>
+                <div class="industries-container">
+                    <div class="industry-card large animate-in">
+                        <div class="industry-icon"><i class="fas fa-car"></i></div>
+                        <h3>Automotive</h3>
+                        <p>Auto components, OEMs, Tier 1 & 2 suppliers</p>
+                        <div class="industry-stats">
+                            <span><strong>20+</strong> Companies Engaged</span>
+                        </div>
+                    </div>
+                    <div class="industry-card animate-in delay-1">
+                        <div class="industry-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Manufacturing</h3>
+                        <p>Precision Engineering, Machining</p>
+                        <div class="industry-stats">
+                            <span><strong>5+</strong> Companies</span>
+                        </div>
+                    </div>
+                    <div class="industry-card animate-in delay-2">
+                        <div class="industry-icon"><i class="fas fa-scroll"></i></div>
+                        <h3>Textile</h3>
+                        <p>Winding, Quality Control</p>
+                        <div class="industry-stats">
+                            <span><strong>1</strong> POC Delivered</span>
+                        </div>
+                    </div>
+                    <div class="industry-card animate-in delay-3">
+                        <div class="industry-icon"><i class="fas fa-flask"></i></div>
+                        <h3>Polymers</h3>
+                        <p>Plastic Manufacturing</p>
+                        <div class="industry-stats">
+                            <span><strong>1</strong> POC Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Companies Visited Map -->
+        <section class="slide" id="slide10">
+            <div class="slide-content" style="align-items: center;">
+                <h2 class="slide-title" style="text-align: center; justify-content: center;"><i
+                        class="fas fa-map-marked-alt"></i> Client Engagement Map</h2>
+                <div class="map-container animate-in"
+                    style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;">
+                    <div class="region north-india" style="flex: 0 1 400px; max-width: 450px;">
+                        <div class="region-label">North India</div>
+                        <div class="region-stats">
+                            <span class="big-number">28</span>
+                            <span class="label">Companies Engaged</span>
+                        </div>
+                        <div class="cities">
+                            <span class="city"><i class="fas fa-map-pin"></i> Faridabad</span>
+                            <span class="city"><i class="fas fa-map-pin"></i> Gurgaon</span>
+                            <span class="city"><i class="fas fa-map-pin"></i> Delhi NCR</span>
+                        </div>
+                    </div>
+                    <div class="region west-india animate-in delay-1" style="flex: 0 1 400px; max-width: 450px;">
+                        <div class="region-label">West India</div>
+                        <div class="region-stats">
+                            <span class="big-number">1</span>
+                            <span class="label">POC Delivered</span>
+                        </div>
+                        <div class="cities">
+                            <span class="city"><i class="fas fa-map-pin"></i> Gujarat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Companies Visited Grid -->
+        <section class="slide" id="slide11">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-building"></i> Companies We Visited</h2>
+                <p class="slide-subtitle">29 Unique Companies | 32 Physical Visits</p>
+                <div class="companies-grid">
+                    <!-- Highlighted companies with logos -->
+                    <div class="company-badge-logo animate-in"
+                        style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(239, 68, 68, 0.2)); border: 2px solid #f59e0b; border-radius: 30px; box-shadow: 0 5px 25px rgba(245, 158, 11, 0.5);">
+                        <img src="logos/knorr-bremse.png" alt="Knorr-Bremse"
+                            style="width: 40px; height: 40px; border-radius: 8px; background: white; padding: 4px; object-fit: contain;">
+                        <span style="font-weight: 600; color: #f8fafc;">Knorr-Bremse</span>
+                    </div>
+                    <div class="company-badge-logo animate-in"
+                        style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(239, 68, 68, 0.2)); border: 2px solid #f59e0b; border-radius: 30px; box-shadow: 0 5px 25px rgba(245, 158, 11, 0.5);">
+                        <img src="logos/revent-precision-engineering.png" alt="Revent Precision"
+                            style="width: 40px; height: 40px; border-radius: 8px; background: white; padding: 4px; object-fit: contain;">
+                        <span style="font-weight: 600; color: #f8fafc;">Revent Precision</span>
+                    </div>
+                    <div class="company-badge-logo animate-in"
+                        style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(239, 68, 68, 0.2)); border: 2px solid #f59e0b; border-radius: 30px; box-shadow: 0 5px 25px rgba(245, 158, 11, 0.5);">
+                        <img src="logos/logo-roop-polymers-ltd.jpg" alt="Roop Polymers"
+                            style="width: 40px; height: 40px; border-radius: 8px; background: white; padding: 4px; object-fit: contain;">
+                        <span style="font-weight: 600; color: #f8fafc;">Roop Polymers</span>
+                    </div>
+                    <div class="company-badge-logo animate-in"
+                        style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(239, 68, 68, 0.2)); border: 2px solid #f59e0b; border-radius: 30px; box-shadow: 0 5px 25px rgba(245, 158, 11, 0.5);">
+                        <img src="logos/bharat_gears.jpg" alt="Bharat Gears"
+                            style="width: 40px; height: 40px; border-radius: 8px; background: white; padding: 4px; object-fit: contain;">
+                        <span style="font-weight: 600; color: #f8fafc;">Bharat Gears</span>
+                    </div>
+                    <div class="company-badge-logo animate-in"
+                        style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(239, 68, 68, 0.2)); border: 2px solid #f59e0b; border-radius: 30px; box-shadow: 0 5px 25px rgba(245, 158, 11, 0.5);">
+                        <img src="logos/kiran_industries.png" alt="Kiran Industries"
+                            style="width: 40px; height: 40px; border-radius: 8px; background: white; padding: 4px; object-fit: contain;">
+                        <span style="font-weight: 600; color: #f8fafc;">Kiran Industries</span>
+                    </div>
+                    <!-- Regular companies -->
+                    <div class="company-badge animate-in">RICO Auto</div>
+                    <div class="company-badge animate-in">GKN Automotive</div>
+                    <div class="company-badge animate-in">Uno Minda</div>
+                    <div class="company-badge animate-in">FCC Clutch</div>
+                    <div class="company-badge animate-in">Sanden Vikas</div>
+                    <div class="company-badge animate-in">Indo Autotech</div>
+                    <div class="company-badge animate-in">SMI Amtek</div>
+                    <div class="company-badge animate-in">Subros</div>
+                    <div class="company-badge animate-in">Blue Stampings</div>
+                    <div class="company-badge animate-in">Satellite Forgings</div>
+                    <div class="company-badge animate-in">Precision Engineers</div>
+                    <div class="company-badge animate-in">Autolek</div>
+                    <div class="company-badge animate-in">NAW</div>
+                    <div class="company-badge animate-in">Besoto Group</div>
+                    <div class="company-badge animate-in">Power Broach</div>
+                    <div class="company-badge animate-in">San Automotive</div>
+                    <div class="company-badge animate-in">JCB India</div>
+                    <div class="company-badge animate-in">Hitachi Astemo</div>
+                    <div class="company-badge animate-in">Padget</div>
+                    <div class="company-badge animate-in">Reach Robotics</div>
+                    <div class="company-badge animate-in">IAC</div>
+                    <div class="company-badge animate-in">MindaRika</div>
+                    <div class="company-badge animate-in">GKN Driveline</div>
+                    <div class="company-badge animate-in">Yajaki</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: POC Success Story 1 - Knorr-Bremse -->
+        <section class="slide" id="slide12">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-star"></i> Success Story: Knorr-Bremse</h2>
+                <div class="success-story">
+                    <div class="story-header animate-in">
+                        <div class="company-logo-box">
+                            <img src="logos/knorr-bremse.png" alt="Knorr-Bremse">
+                        </div>
+                        <div class="company-info">
+                            <h3>Knorr-Bremse</h3>
+                            <span class="industry-tag">Automotive - Brake Systems</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-section animate-in delay-1">
+                            <h4><i class="fas fa-cube"></i> Products Pitched</h4>
+                            <div class="product-tags">
+                                <span>VisiTech</span>
+                                <span>RovoVision - NearMe</span>
+                                <span>RovoVision - SpeedTracking</span>
+                            </div>
+                        </div>
+                        <div class="story-section animate-in delay-2">
+                            <h4><i class="fas fa-flask"></i> Demo Delivered</h4>
+                            <p>Live prototype demonstration of all three products showcasing BLE, RFID, and AI Camera
+                                technology for safety monitoring.</p>
+                        </div>
+                        <div class="story-section animate-in delay-3">
+                            <h4><i class="fas fa-file-invoice-dollar"></i> Current Status</h4>
+                            <div class="status-badge pending-po">
+                                <i class="fas fa-clock"></i> Quotation Submitted - Awaiting PO Approval
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: POC Success Story 2 - Kiran Industries -->
+        <section class="slide" id="slide13">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-star"></i> Success Story: Kiran Industries</h2>
+                <div class="success-story">
+                    <div class="story-header animate-in">
+                        <div class="company-logo-box">
+                            <img src="logos/kiran_industries.png" alt="Kiran Industries">
+                        </div>
+                        <div class="company-info">
+                            <h3>Kiran Industries, Gujarat</h3>
+                            <span class="industry-tag textile">Textile Industry</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-section animate-in delay-1">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
+                            <p>Not achieving accuracy in bobbin length and weight measurement in their winding process.
+                            </p>
+                        </div>
+                        <div class="story-section animate-in delay-2">
+                            <h4><i class="fas fa-lightbulb"></i> Our Solution</h4>
+                            <p>Custom precision measurement system with our hardware and software to achieve accurate
+                                bobbin length and weight tracking.</p>
+                        </div>
+                        <div class="story-section animate-in delay-3">
+                            <h4><i class="fas fa-handshake"></i> Current Status</h4>
+                            <div class="status-badge verbal-po">
+                                <i class="fas fa-check-circle"></i> Verbal PO Confirmed
+                            </div>
+                            <div class="expected-date">
+                                <i class="fas fa-calendar-check"></i> Expected PO: 10th January 2026
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: POC Success Story 3 - Roop Polymers -->
+        <section class="slide" id="slide14">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-star"></i> Success Story: Roop Polymers</h2>
+                <div class="success-story">
+                    <div class="story-header animate-in">
+                        <div class="company-logo-box">
+                            <img src="logos/logo-roop-polymers-ltd.jpg" alt="Roop Polymers">
+                        </div>
+                        <div class="company-info">
+                            <h3>Roop Polymers Ltd</h3>
+                            <span class="industry-tag polymers">Polymer Manufacturing</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-section animate-in delay-1">
+                            <h4><i class="fas fa-cube"></i> Product Pitched</h4>
+                            <div class="product-tags">
+                                <span>RovoVision - PPE Detection</span>
+                            </div>
+                        </div>
+                        <div class="story-section animate-in delay-2">
+                            <h4><i class="fas fa-magic"></i> Solution Highlights</h4>
+                            <p>AI-powered PPE violation detection with automatic email alerts to supervisors for
+                                immediate action.</p>
+                        </div>
+                        <div class="story-section animate-in delay-3">
+                            <h4><i class="fas fa-thumbs-up"></i> Current Status</h4>
+                            <div class="status-badge impressed">
+                                <i class="fas fa-smile"></i> Client Impressed - PO Discussion Ongoing
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: POC Success Story 4 - Revent Precision -->
+        <section class="slide" id="slide15">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-star"></i> Success Story: Revent Precision</h2>
+                <div class="success-story">
+                    <div class="story-header animate-in">
+                        <div class="company-logo-box">
+                            <img src="logos/revent-precision-engineering.png" alt="Revent Precision">
+                        </div>
+                        <div class="company-info">
+                            <h3>Revent Precision Engineering Ltd</h3>
+                            <span class="industry-tag manufacturing">Precision Manufacturing</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-section animate-in delay-1">
+                            <h4><i class="fas fa-cube"></i> Products Pitched</h4>
+                            <div class="product-tags">
+                                <span>User Identification</span>
+                                <span>VisiTech</span>
+                                <span>VR Training System</span>
+                            </div>
+                        </div>
+                        <div class="story-section animate-in delay-2">
+                            <h4><i class="fas fa-shield-alt"></i> Solution</h4>
+                            <p>Machine access control - operators can't operate machines without authentication. Plus
+                                VR-based smart training system for workforce development.</p>
+                        </div>
+                        <div class="story-section animate-in delay-3">
+                            <h4><i class="fas fa-file-signature"></i> Current Status</h4>
+                            <div class="status-badge pending-po">
+                                <i class="fas fa-file-alt"></i> Quotation Submitted for 3 Products - Awaiting PO
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide16">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-star"></i> Success Story: Bharat Gears</h2>
+                <div class="success-story">
+                    <div class="story-header animate-in">
+                        <div class="company-logo-box">
+                            <img src="logos/bharat_gears.jpg" alt="Bharat Gears">
+                        </div>
+                        <div class="company-info">
+                            <h3>Bharat Gears Limited</h3>
+                            <span class="industry-tag manufacturing">Precision Manufacturing</span>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-section animate-in delay-1">
+                            <h4><i class="fas fa-cube"></i> Products Pitched</h4>
+                            <div class="product-tags">
+                                <span>Online Work Permit</span>
+                                <span>VisiTech</span>
+                            </div>
+                        </div>
+                        <div class="story-section animate-in delay-2">
+                            <h4><i class="fas fa-shield-alt"></i> Solution</h4>
+                            <p>Online work permit system - employees can apply for work permits online and get
+                                instant approval. VisiTech - Visitor Management System with Kiosk Integration</p>
+                        </div>
+                        <div class="story-section animate-in delay-3">
+                            <h4><i class="fas fa-file-signature"></i> Current Status</h4>
+                            <div class="status-badge pending-po">
+                                <i class="fas fa-file-alt"></i> Quotation Submitted for 1 Product (VisiTech) -
+                                Awaiting PO
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Slide 16: R&D Achievements -->
+        <section class="slide" id="slide17">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-microscope"></i> R&D Achievements</h2>
+                <div class="rd-container">
+                    <div class="rd-section animate-in">
+                        <h3><i class="fas fa-robot"></i> Robot Communication</h3>
+                        <div class="rd-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>EPSON Robot - Successfully integrated with our software</span>
+                        </div>
+                    </div>
+                    <div class="rd-section animate-in delay-1">
+                        <h3><i class="fas fa-microchip"></i> PLC Integration (Modbus Protocol)</h3>
+                        <div class="rd-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Mitsubishi PLC - Connected & Data Received</span>
+                        </div>
+                        <div class="rd-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Omron PLC - Connected & Data Received</span>
+                        </div>
+                        <div class="rd-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Delta PLC - Connected & Data Received</span>
+                        </div>
+                        <div class="rd-item in-progress">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Siemens PLC - Integration Ongoing</span>
+                        </div>
+                    </div>
+                    <div class="rd-section animate-in delay-2">
+                        <h3><i class="fas fa-brain"></i> AI & Computer Vision</h3>
+                        <div class="rd-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Object Detection via ML - R&D Complete</span>
+                        </div>
+                        <div class="rd-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>IoT + Computer Vision Training Delivered to Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Revenue Pipeline -->
+        <section class="slide" id="slide18">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-funnel-dollar"></i> Revenue Pipeline</h2>
+                <div class="pipeline-container">
+                    <div class="pipeline-stage animate-in">
+                        <div class="stage-header">
+                            <span class="stage-name">Quotations Submitted</span>
+                            <span class="stage-count">4</span>
+                        </div>
+                        <div class="stage-companies">
+                            <span>Knorr-Bremse</span>
+                            <span>Revent Precision</span>
+                            <span>Kiran Industries</span>
+                            <span>Bharat Gears</span>
+                        </div>
+                    </div>
+                    <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="pipeline-stage verbal animate-in delay-1">
+                        <div class="stage-header">
+                            <span class="stage-name">Verbal Commitment</span>
+                            <span class="stage-count">4</span>
+                        </div>
+                        <div class="stage-companies">
+                            <span class="highlight">Kiran Industries</span>
+                            <span class="highlight">Bharat Gears</span>
+                            <span class="highlight">Knorr-Bremse</span>
+                            <span class="highlight">Revent Precision</span>
+                        </div>
+                    </div>
+                    <div class="pipeline-arrow"><i class="fas fa-arrow-down"></i></div>
+                    <div class="pipeline-stage expected animate-in delay-2">
+                        <div class="stage-header">
+                            <span class="stage-name">Expected PO</span>
+                            <span class="stage-date">10 - 15 Jan 2026</span>
+                        </div>
+                        <div class="potential-revenue">
+                            <span class="label">Potential Revenue</span>
+                            <span class="amount">₹ 6.7 Lakhs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Competitive Advantage -->
+        <section class="slide" id="slide19">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-gem"></i> Our Competitive Edge</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card animate-in">
+                        <div class="adv-icon"><i class="fas fa-rupee-sign"></i></div>
+                        <h4>Cost-Effective</h4>
+                        <p>RovoConnect is cheaper than competitors without compromising quality</p>
+                    </div>
+                    <div class="advantage-card animate-in delay-1">
+                        <div class="adv-icon"><i class="fas fa-tools"></i></div>
+                        <h4>Custom-Built</h4>
+                        <p>Solutions tailored to each customer's specific requirements</p>
+                    </div>
+                    <div class="advantage-card animate-in delay-2">
+                        <div class="adv-icon"><i class="fas fa-bolt"></i></div>
+                        <h4>Fast Response</h4>
+                        <p>Quick communication and on-time technology demonstrations</p>
+                    </div>
+                    <div class="advantage-card animate-in delay-3">
+                        <div class="adv-icon"><i class="fas fa-users-cog"></i></div>
+                        <h4>Team on Payroll</h4>
+                        <p>Dedicated in-house team ensuring consistent delivery</p>
+                    </div>
+                    <div class="advantage-card animate-in delay-4">
+                        <div class="adv-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h4>Tech Showcasing</h4>
+                        <p>Working prototypes and live demos that impress clients</p>
+                    </div>
+                    <div class="advantage-card animate-in delay-5">
+                        <div class="adv-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Client Focus</h4>
+                        <p>Understanding problems first, then delivering solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 20: Current Status & Roadmap -->
+        <section class="slide" id="slide20">
+            <div class="slide-content">
+                <h2 class="slide-title"><i class="fas fa-road"></i> Status & Road Ahead</h2>
+                <div class="status-roadmap-container">
+                    <div class="status-section">
+                        <h3>Current Status</h3>
+                        <div class="status-item ongoing animate-in">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Market Research - Ongoing</span>
+                        </div>
+                        <div class="status-item ongoing animate-in delay-1">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Team Building - Ongoing</span>
+                        </div>
+                        <div class="status-item pending animate-in delay-2">
+                            <i class="fas fa-clock"></i>
+                            <span>Company Registration - Pending</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-section animate-in delay-3">
+                        <h3>Month 2 Goals</h3>
+                        <div class="roadmap-items">
+                            <div class="roadmap-item">
+                                <div class="roadmap-icon"><i class="fas fa-file-signature"></i></div>
+                                <span>Complete Company Registration</span>
+                            </div>
+                            <div class="roadmap-item">
+                                <div class="roadmap-icon"><i class="fas fa-receipt"></i></div>
+                                <span>Close Pending Purchase Orders</span>
+                            </div>
+                            <div class="roadmap-item">
+                                <div class="roadmap-icon"><i class="fas fa-microchip"></i></div>
+                                <span>Complete Siemens PLC Integration</span>
+                            </div>
+                            <div class="roadmap-item">
+                                <div class="roadmap-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                                <span>Expand to More Industries</span>
+                            </div>
+                            <div class="roadmap-item">
+                                <div class="roadmap-icon"><i class="fas fa-user-plus"></i></div>
+                                <span>Hire Additional Team Members</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 20: Closing - Trust & Confidence -->
+        <section class="slide" id="slide21">
+            <div class="slide-content closing-slide">
+                <div class="closing-header animate-in">
+                    <h2>Thank You</h2>
+                    <p class="tagline">Building the Future of Indian Manufacturing</p>
+                </div>
+                <div class="recap-grid animate-in delay-1">
+                    <div class="recap-item">
+                        <span class="recap-number">320%</span>
+                        <span class="recap-label">Target Achievement</span>
+                    </div>
+                    <div class="recap-item">
+                        <span class="recap-number">29</span>
+                        <span class="recap-label">Companies Engaged</span>
+                    </div>
+                    <div class="recap-item">
+                        <span class="recap-number">6</span>
+                        <span class="recap-label">Products Ready</span>
+                    </div>
+                    <div class="recap-item">
+                        <span class="recap-number">4</span>
+                        <span class="recap-label">POCs Delivered</span>
+                    </div>
+                </div>
+                <div class="confidence-message animate-in delay-2">
+                    <i class="fas fa-quote-left"></i>
+                    <p>In just <b>26 days</b>, we've proven our capability to build, pitch, and deliver. With your
+                        continued support, we're ready to scale and dominate the industrial automation space.</p>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="contact-info animate-in delay-3">
+                    <a href="https://rovoautomation.com" target="_blank"><i class="fas fa-globe"></i>
+                        rovoautomation.com</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="decorative-elements">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Keyboard Hints -->
+    <div class="keyboard-hints" id="keyboardHints">
+        <span><kbd>←</kbd> <kbd>→</kbd> Navigate</span>
+        <span><kbd>Space</kbd> Next</span>
+        <span><kbd>F</kbd> Fullscreen</span>
+        <span><kbd>H</kbd> Hide Hints</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROVO Connect - Technical Architecture Presentation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Branding Logo - Fixed on all slides -->
+    <div class="branding-logo">
+        <img src="../presentation/logos/rovo.png" alt="ROVO Connect">
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="slide-counter" id="slideCounter">1 / 20</div>
+
+    <!-- Navigation -->
+    <div class="nav-arrows">
+        <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Slide Container -->
+    <div class="presentation" id="presentation">
+
+        <!-- SLIDE 1: Title -->
+        <section class="slide active" id="slide1">
+            <div class="slide-content title-slide">
+                <div class="logo-container animate-in">
+                    <div class="logo-glow"></div>
+                    <img src="../presentation/logos/rovo.png" alt="ROVO Connect" class="title-logo">
+                </div>
+                <h1 class="main-title animate-in delay-1">ROVO Connect</h1>
+                <p class="title-subtitle animate-in delay-2">Universal Industrial PLC Gateway Platform</p>
+                <div class="title-badge animate-in delay-3">
+                    <i class="fas fa-microchip"></i>
+                    Technical Architecture & Implementation
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Problem Statement -->
+        <section class="slide" id="slide2">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">02 / Problem Statement</span>
+                    <h2 class="slide-title"><i class="fas fa-exclamation-circle"></i> The Industrial Challenge</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-industry"></i></div>
+                            <h3>Multi-Vendor Environment</h3>
+                        </div>
+                        <ul class="checklist" style="list-style: none;">
+                            <li style="display: flex; gap: 10px;"><i class="fas fa-times" style="color: #dc2626;"></i>
+                                Different PLC brands per machine line</li>
+                            <li style="display: flex; gap: 10px;"><i class="fas fa-times" style="color: #dc2626;"></i>
+                                Proprietary protocols for each vendor</li>
+                            <li style="display: flex; gap: 10px;"><i class="fas fa-times" style="color: #dc2626;"></i>
+                                Separate monitoring systems required</li>
+                            <li style="display: flex; gap: 10px;"><i class="fas fa-times" style="color: #dc2626;"></i>
+                                No unified view of shopfloor status</li>
+                            <li style="display: flex; gap: 10px;"><i class="fas fa-times" style="color: #dc2626;"></i>
+                                Manual data collection for reports</li>
+                        </ul>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon orange"><i class="fas fa-chart-pie"></i></div>
+                            <h3>Industry Statistics</h3>
+                        </div>
+                        <div class="stat-card" style="margin-bottom: 15px;">
+                            <div class="stat-value">73%</div>
+                            <div class="stat-label">Factories use 3+ PLC brands</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">4-8 hrs</div>
+                            <div class="stat-label">Daily time lost in manual monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Solution Overview -->
+        <section class="slide" id="slide3">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">03 / Solution</span>
+                    <h2 class="slide-title"><i class="fas fa-lightbulb"></i> ROVO Connect: Unified Dashboard</h2>
+                </div>
+                <div class="highlight-box" style="text-align: center; margin-bottom: 30px;">
+                    <h3><i class="fas fa-bullseye"></i> Core Value Proposition</h3>
+                    <p style="font-size: 16px; margin-top: 8px;">
+                        Single Edge Device connects All PLCs delivers Unified Real-Time Dashboard
+                    </p>
+                </div>
+                <div class="content-grid three-col">
+                    <div class="feature-card animate-in">
+                        <div class="icon"><i class="fas fa-network-wired"></i></div>
+                        <h4>Universal Protocol Support</h4>
+                        <p>Modbus TCP/RTU, S7 Comm, FINS, EtherNet/IP, OPC-UA</p>
+                    </div>
+                    <div class="feature-card animate-in delay-1">
+                        <div class="icon"><i class="fas fa-bolt"></i></div>
+                        <h4>Edge Computing</h4>
+                        <p>Local processing, reduced latency, offline capability</p>
+                    </div>
+                    <div class="feature-card animate-in delay-2">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Real-Time Dashboard</h4>
+                        <p>WebSocket-based live updates, sub-100ms refresh</p>
+                    </div>
+                    <div class="feature-card animate-in delay-3">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Industrial Security</h4>
+                        <p>TLS 1.3, VPN tunneling, role-based access control</p>
+                    </div>
+                    <div class="feature-card animate-in delay-4">
+                        <div class="icon"><i class="fas fa-database"></i></div>
+                        <h4>Time-Series Storage</h4>
+                        <p>TimescaleDB with 90% compression, infinite retention</p>
+                    </div>
+                    <div class="feature-card animate-in delay-5">
+                        <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4>Cross-Platform Access</h4>
+                        <p>Web, mobile, tablet - any device, anywhere</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: System Architecture -->
+        <section class="slide" id="slide4">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">04 / Architecture</span>
+                    <h2 class="slide-title"><i class="fas fa-sitemap"></i> System Architecture Overview</h2>
+                </div>
+                <div class="diagram-container">
+                    <div class="arch-container">
+                        <div class="arch-layer">
+                            <div class="arch-box" style="border-color: #7c3aed;">
+                                <h4><i class="fas fa-microchip"></i> Siemens</h4>
+                                <p>S7-1200/1500</p>
+                            </div>
+                            <div class="arch-box" style="border-color: #7c3aed;">
+                                <h4><i class="fas fa-microchip"></i> Mitsubishi</h4>
+                                <p>FX5U Series</p>
+                            </div>
+                            <div class="arch-box" style="border-color: #7c3aed;">
+                                <h4><i class="fas fa-microchip"></i> Omron</h4>
+                                <p>CP2E Series</p>
+                            </div>
+                            <div class="arch-box" style="border-color: #7c3aed;">
+                                <h4><i class="fas fa-microchip"></i> Delta</h4>
+                                <p>DVP Series</p>
+                            </div>
+                            <div class="arch-box" style="border-color: #7c3aed;">
+                                <h4><i class="fas fa-microchip"></i> Allen-Bradley</h4>
+                                <p>CompactLogix</p>
+                            </div>
+                        </div>
+                        <div class="arch-connector"><i class="fas fa-arrow-down"></i> Modbus TCP/RTU | S7 Comm | FINS |
+                            EtherNet/IP</div>
+                        <div class="arch-layer">
+                            <div class="arch-box highlight" style="padding: 22px 50px;">
+                                <h4><i class="fas fa-server"></i> ROVO EDGE GATEWAY</h4>
+                                <p>Raspberry Pi 5 (16GB RAM)</p>
+                                <p style="margin-top: 8px; font-size: 11px;">Protocol Translation | Data Processing |
+                                    Local Storage</p>
+                            </div>
+                        </div>
+                        <div class="arch-connector"><i class="fas fa-arrow-down"></i> TLS 1.3 Encrypted | WireGuard VPN
+                        </div>
+                        <div class="arch-layer">
+                            <div class="arch-box" style="border-color: #0891b2;">
+                                <h4><i class="fas fa-cloud"></i> Cloud Server</h4>
+                                <p>TimescaleDB + API</p>
+                            </div>
+                        </div>
+                        <div class="arch-connector"><i class="fas fa-arrow-down"></i> WebSocket Real-Time</div>
+                        <div class="arch-layer">
+                            <div class="arch-box" style="border-color: #059669;">
+                                <h4><i class="fas fa-desktop"></i> Web Dashboard</h4>
+                                <p>React + WebSocket</p>
+                            </div>
+                            <div class="arch-box" style="border-color: #059669;">
+                                <h4><i class="fas fa-mobile-alt"></i> Mobile App</h4>
+                                <p>Progressive Web App</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Edge Device Hardware -->
+        <section class="slide" id="slide5">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">05 / Edge Device</span>
+                    <h2 class="slide-title"><i class="fas fa-server"></i> Edge Gateway Hardware</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                            <h3>Hardware Specifications</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Component</th>
+                                <th>Specification</th>
+                            </tr>
+                            <tr>
+                                <td>Platform</td>
+                                <td>Raspberry Pi 5</td>
+                            </tr>
+                            <tr>
+                                <td>CPU</td>
+                                <td>Broadcom BCM2712, Quad-core 2.4GHz</td>
+                            </tr>
+                            <tr>
+                                <td>RAM</td>
+                                <td>16GB LPDDR4X</td>
+                            </tr>
+                            <tr>
+                                <td>Storage</td>
+                                <td>256GB NVMe SSD (via HAT)</td>
+                            </tr>
+                            <tr>
+                                <td>Network</td>
+                                <td>Gigabit Ethernet + WiFi 6</td>
+                            </tr>
+                            <tr>
+                                <td>USB</td>
+                                <td>2x USB 3.0 + 2x USB 2.0</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-plug"></i></div>
+                            <h3>Connectivity Expansion</h3>
+                        </div>
+                        <div class="security-layers">
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-ethernet"></i></div>
+                                <div>
+                                    <h4>Ethernet (Primary)</h4>
+                                    <p>8/16-port Industrial Managed Switch</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-link"></i></div>
+                                <div>
+                                    <h4>RS-485 Hub</h4>
+                                    <p>FTDI-based USB-to-RS485 (4/8 port)</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-terminal"></i></div>
+                                <div>
+                                    <h4>RS-232 Adapter</h4>
+                                    <p>USB-to-RS232 for legacy equipment</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-signal"></i></div>
+                                <div>
+                                    <h4>4G/LTE Modem</h4>
+                                    <p>Cellular backup for remote sites</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Protocol Support Matrix -->
+        <section class="slide" id="slide6">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">06 / Protocols</span>
+                    <h2 class="slide-title"><i class="fas fa-exchange-alt"></i> Universal Protocol Support</h2>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Protocol</th>
+                                <th>Library</th>
+                                <th>License</th>
+                                <th>PLC Brands</th>
+                                <th>Physical Layer</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Modbus TCP</strong></td>
+                                <td>pymodbus</td>
+                                <td><span class="badge success">BSD-3</span></td>
+                                <td>Universal (All brands)</td>
+                                <td>Ethernet</td>
+                                <td><span class="badge success">Implemented</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modbus RTU</strong></td>
+                                <td>pymodbus</td>
+                                <td><span class="badge success">BSD-3</span></td>
+                                <td>Universal (All brands)</td>
+                                <td>RS-485/RS-232</td>
+                                <td><span class="badge primary">Ready</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>S7 Communication</strong></td>
+                                <td>python-snap7</td>
+                                <td><span class="badge success">LGPL</span></td>
+                                <td>Siemens S7-1200/1500</td>
+                                <td>Ethernet (ISO-on-TCP)</td>
+                                <td><span class="badge warning">In Progress</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>FINS/UDP</strong></td>
+                                <td>pyomron</td>
+                                <td><span class="badge success">MIT</span></td>
+                                <td>Omron CJ/CS/CP Series</td>
+                                <td>Ethernet/UDP</td>
+                                <td><span class="badge primary">Ready</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>EtherNet/IP</strong></td>
+                                <td>pycomm3</td>
+                                <td><span class="badge success">MIT</span></td>
+                                <td>Allen-Bradley, Rockwell</td>
+                                <td>Ethernet</td>
+                                <td><span class="badge primary">Ready</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>OPC-UA</strong></td>
+                                <td>opcua-asyncio</td>
+                                <td><span class="badge success">LGPL</span></td>
+                                <td>Universal (Industry 4.0)</td>
+                                <td>Ethernet</td>
+                                <td><span class="badge primary">Ready</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <h3><i class="fas fa-lock-open"></i> 100% Open Source Libraries - No Vendor Lock-in</h3>
+                    <p>All implementations use industry-standard, license-free libraries with no proprietary
+                        dependencies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Data Flow -->
+        <section class="slide" id="slide7">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">07 / Data Flow</span>
+                    <h2 class="slide-title"><i class="fas fa-stream"></i> End-to-End Data Flow</h2>
+                </div>
+                <div class="diagram-container">
+                    <div class="flow-diagram">
+                        <div class="flow-row">
+                            <div class="flow-box plc">
+                                <h4><i class="fas fa-microchip"></i> PLC 1</h4>
+                                <p>D0-D999 Registers</p>
+                            </div>
+                            <div class="flow-box plc">
+                                <h4><i class="fas fa-microchip"></i> PLC 2</h4>
+                                <p>Holding Registers</p>
+                            </div>
+                            <div class="flow-box plc">
+                                <h4><i class="fas fa-microchip"></i> PLC n</h4>
+                                <p>Coils + Registers</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-down"></i> Protocol-Specific Requests
+                            (Modbus/S7/FINS)</div>
+                        <div class="flow-row">
+                            <div class="flow-box edge" style="min-width: 400px;">
+                                <h4><i class="fas fa-cogs"></i> PROTOCOL HANDLER</h4>
+                                <p>Async I/O | Connection Pool | Rate Limiter</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="flow-row">
+                            <div class="flow-box edge" style="min-width: 400px;">
+                                <h4><i class="fas fa-filter"></i> DATA PROCESSOR</h4>
+                                <p>Tag Normalization | Scaling | Validation | Aggregation</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-down"></i></div>
+                        <div class="flow-row">
+                            <div class="flow-box edge" style="min-width: 400px;">
+                                <h4><i class="fas fa-database"></i> LOCAL STORAGE</h4>
+                                <p>TimescaleDB Edge | 7-day buffer | Offline Mode</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow"><i class="fas fa-arrow-down"></i> TLS 1.3 Encrypted Stream</div>
+                        <div class="flow-row">
+                            <div class="flow-box">
+                                <h4><i class="fas fa-cloud"></i> Cloud API</h4>
+                                <p>REST + WebSocket</p>
+                            </div>
+                            <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                            <div class="flow-box">
+                                <h4><i class="fas fa-database"></i> TimescaleDB</h4>
+                                <p>Historical Storage</p>
+                            </div>
+                            <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                            <div class="flow-box">
+                                <h4><i class="fas fa-chart-line"></i> Dashboard</h4>
+                                <p>Real-Time Viz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Database Architecture -->
+        <section class="slide" id="slide8">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">08 / Database</span>
+                    <h2 class="slide-title"><i class="fas fa-database"></i> Time-Series Database Architecture</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-clock"></i></div>
+                            <h3>Why TimescaleDB?</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li>Purpose-built for time-series industrial data</li>
+                            <li>Based on PostgreSQL - familiar SQL queries</li>
+                            <li>90%+ compression for historical data</li>
+                            <li>Automatic data tiering (hot/warm/cold)</li>
+                            <li>Open-source Apache 2.0 license</li>
+                            <li>Runs on Raspberry Pi (lightweight)</li>
+                            <li>Built-in continuous aggregations</li>
+                        </ul>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-code"></i></div>
+                            <h3>Data Schema Design</h3>
+                        </div>
+                        <div class="code-block">
+                            <span class="keyword">CREATE TABLE</span> sensor_data (
+                            time <span class="function">TIMESTAMPTZ</span> <span class="keyword">NOT NULL</span>,
+                            plc_id <span class="function">TEXT</span>,
+                            tag_name <span class="function">TEXT</span>,
+                            value <span class="function">DOUBLE PRECISION</span>,
+                            quality <span class="function">INTEGER</span>
+                            );
+
+                            <span class="comment">-- Convert to hypertable</span>
+                            <span class="keyword">SELECT</span> create_hypertable(<span
+                                class="string">'sensor_data'</span>, <span class="string">'time'</span>);
+
+                            <span class="comment">-- Enable compression after 1 day</span>
+                            <span class="keyword">ALTER TABLE</span> sensor_data
+                            <span class="keyword">SET</span> (timescaledb.compress);
+                        </div>
+                    </div>
+                </div>
+                <div class="content-grid three-col" style="margin-top: 20px;">
+                    <div class="stat-card">
+                        <div class="stat-value">2L+</div>
+                        <div class="stat-label">Data Points / Day</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">90%</div>
+                        <div class="stat-label">Storage Compression</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">&lt;5ms</div>
+                        <div class="stat-label">Query Response Time</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: Performance -->
+        <section class="slide" id="slide9">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">09 / Performance</span>
+                    <h2 class="slide-title"><i class="fas fa-tachometer-alt"></i> Real-Time Performance</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-stopwatch"></i></div>
+                            <h3>Polling Cycle Times</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Mode</th>
+                                <th>Cycle Time</th>
+                                <th>Use Case</th>
+                            </tr>
+                            <tr>
+                                <td><span class="badge success">Real-Time</span></td>
+                                <td>&lt;50ms</td>
+                                <td>Critical alarms, safety systems</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge primary">Near Real-Time</span></td>
+                                <td>100-200ms</td>
+                                <td>Production monitoring (default)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge warning">Standard</span></td>
+                                <td>500ms-1s</td>
+                                <td>Energy monitoring, OEE</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-rocket"></i></div>
+                            <h3>Achieving &lt;50ms Latency</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li><strong>asyncio</strong> - Non-blocking I/O operations</li>
+                            <li><strong>Persistent connections</strong> - No reconnection overhead</li>
+                            <li><strong>Batch reads</strong> - Read 100 registers in 1 request</li>
+                            <li><strong>Connection pooling</strong> - Pre-established sessions</li>
+                            <li><strong>Edge processing</strong> - Zero cloud latency</li>
+                            <li><strong>Optimized TCP</strong> - Disable Nagle's algorithm</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <h3><i class="fas fa-calculator"></i> Performance Calculation</h3>
+                    <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; margin-top: 8px;">
+                        10 PLCs x 50 registers x 100ms cycle = <strong>5,000 register reads/second</strong><br>
+                        Data throughput: 5,000 x 2 bytes = <strong>~10 KB/s</strong> (easily handled by Gigabit
+                        Ethernet)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: Data Capacity -->
+        <section class="slide" id="slide10">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">10 / Data Capacity</span>
+                    <h2 class="slide-title"><i class="fas fa-chart-bar"></i> Handling 2+ Lakh Data Points</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                            <h3>Capacity Calculation</h3>
+                        </div>
+                        <div class="code-block">
+                            <span class="comment">Configuration:</span>
+                            20 PLCs connected
+                            100 tags per PLC
+                            1 second polling interval
+
+                            <span class="comment">Calculations:</span>
+                            20 x 100 = <span class="function">2,000 tags/second</span>
+                            2,000 x 60 x 60 = <span class="function">7.2M/hour</span>
+                            7.2M x 24 = <span class="string">172.8M/day</span>
+
+                            <span class="comment">2 Lakh Requirement:</span>
+                            2,00,000 / 2,000 = <span class="function">100 seconds</span>
+                            <span class="string">Achievable in under 2 minutes</span>
+                        </div>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-compress-arrows-alt"></i></div>
+                            <h3>Optimization Strategies</h3>
+                        </div>
+                        <div class="security-layers">
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-layer-group"></i></div>
+                                <div>
+                                    <h4>Batch Writes</h4>
+                                    <p>Buffer 1000 records before DB insert</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-sync"></i></div>
+                                <div>
+                                    <h4>Change Detection</h4>
+                                    <p>Only store when value changes (delta)</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-chart-area"></i></div>
+                                <div>
+                                    <h4>Pre-Aggregation</h4>
+                                    <p>Store min/max/avg per minute for historical</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-file-archive"></i></div>
+                                <div>
+                                    <h4>Columnar Compression</h4>
+                                    <p>TimescaleDB native 90%+ compression</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- SLIDE 11: Security -->
+        <section class="slide" id="slide11">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">11 / Security</span>
+                    <h2 class="slide-title"><i class="fas fa-shield-alt"></i> Defense-in-Depth Security</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                            <h3>Security Layers</h3>
+                        </div>
+                        <div class="security-layers">
+                            <div class="security-layer" style="border-color: var(--accent-blue);">
+                                <div class="layer-icon" style="background: var(--gradient-1);"><i
+                                        class="fas fa-network-wired"></i></div>
+                                <div>
+                                    <h4>Network Isolation</h4>
+                                    <p>PLC network on separate VLAN, no direct internet</p>
+                                </div>
+                            </div>
+                            <div class="security-layer" style="border-color: var(--accent-cyan);">
+                                <div class="layer-icon" style="background: linear-gradient(135deg, #0891b2, #06b6d4);">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div>
+                                    <h4>Transport Encryption</h4>
+                                    <p>TLS 1.3 for all Edge to Cloud communication</p>
+                                </div>
+                            </div>
+                            <div class="security-layer" style="border-color: var(--accent-purple);">
+                                <div class="layer-icon" style="background: var(--gradient-3);"><i
+                                        class="fas fa-tunnel"></i>
+                                </div>
+                                <div>
+                                    <h4>VPN Tunnel</h4>
+                                    <p>WireGuard VPN (kernel-native, open-source)</p>
+                                </div>
+                            </div>
+                            <div class="security-layer" style="border-color: var(--accent-green);">
+                                <div class="layer-icon"><i class="fas fa-key"></i></div>
+                                <div>
+                                    <h4>Authentication</h4>
+                                    <p>JWT tokens + API keys for dashboard access</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon purple"><i class="fas fa-user-shield"></i></div>
+                            <h3>Additional Security Measures</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li><strong>SSH Key-Only Access</strong> - No password login to Edge</li>
+                            <li><strong>AES-256 Encryption</strong> - Database encryption at rest</li>
+                            <li><strong>RBAC</strong> - Role-based access (Admin/Operator/Viewer)</li>
+                            <li><strong>Audit Logging</strong> - All access attempts recorded</li>
+                            <li><strong>Firewall Rules</strong> - Only required ports open</li>
+                            <li><strong>Certificate Pinning</strong> - Prevent MITM attacks</li>
+                            <li><strong>Rate Limiting</strong> - DDoS protection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 12: Scalability -->
+        <section class="slide" id="slide12">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">12 / Scalability</span>
+                    <h2 class="slide-title"><i class="fas fa-expand-arrows-alt"></i> Edge Device Scalability</h2>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hardware Tier</th>
+                                <th>Max PLCs</th>
+                                <th>Max Tags</th>
+                                <th>Cycle Time</th>
+                                <th>RAM Usage</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Raspberry Pi 5 (16GB)</strong></td>
+                                <td>8-12</td>
+                                <td>1,000-1,500</td>
+                                <td>100-200ms</td>
+                                <td>4-6GB</td>
+                                <td>SMB, Single Line</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Industrial ARM (8GB)</strong></td>
+                                <td>15-20</td>
+                                <td>2,000-3,000</td>
+                                <td>100ms</td>
+                                <td>6-7GB</td>
+                                <td>Production Floor</td>
+                            </tr>
+                            <tr>
+                                <td><strong>x86 Industrial PC (32GB)</strong></td>
+                                <td>25-40</td>
+                                <td>5,000+</td>
+                                <td>50-100ms</td>
+                                <td>8-16GB</td>
+                                <td>Enterprise, Multi-Line</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="content-grid two-col" style="margin-top: 25px;">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-plug"></i></div>
+                            <h3>Multi-PLC Hardware</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li><strong>Ethernet:</strong> 8/16/24-port Industrial Managed Switch</li>
+                            <li><strong>Serial:</strong> USB-RS485 Hub (4/8 port, FTDI)</li>
+                            <li><strong>Power:</strong> Industrial DIN-rail 24V DC supply</li>
+                            <li><strong>Enclosure:</strong> IP65-rated industrial cabinet</li>
+                        </ul>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-object-group"></i></div>
+                            <h3>Horizontal Scaling</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 12px;">For large factories, deploy
+                            multiple Edge
+                            devices:</p>
+                        <div style="display: flex; gap: 15px;">
+                            <div class="stat-card" style="flex: 1; padding: 15px;">
+                                <div class="stat-value" style="font-size: 24px;">Zone 1</div>
+                                <div class="stat-label">Edge #1 (10 PLCs)</div>
+                            </div>
+                            <div class="stat-card" style="flex: 1; padding: 15px;">
+                                <div class="stat-value" style="font-size: 24px;">Zone 2</div>
+                                <div class="stat-label">Edge #2 (10 PLCs)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 13: Non-Ethernet PLCs -->
+        <section class="slide" id="slide13">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">13 / Serial Communication</span>
+                    <h2 class="slide-title"><i class="fas fa-link"></i> Non-Ethernet PLC Solutions</h2>
+                </div>
+                <div class="highlight-box" style="margin-bottom: 25px;">
+                    <h3><i class="fas fa-question-circle"></i> "What if the customer's PLC doesn't have Ethernet?"</h3>
+                    <p>Many legacy PLCs use RS-232 or RS-485 serial interfaces. ROVO Connect fully supports them.</p>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-usb"></i></div>
+                            <h3>Recommended: USB-to-RS485</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Component</th>
+                                <th>Recommendation</th>
+                            </tr>
+                            <tr>
+                                <td>Chipset</td>
+                                <td><span class="badge success">FTDI FT232R</span></td>
+                            </tr>
+                            <tr>
+                                <td>Protocol</td>
+                                <td>Modbus RTU (IEC 61158)</td>
+                            </tr>
+                            <tr>
+                                <td>Multi-Port Hub</td>
+                                <td>4/8 Port USB-RS485</td>
+                            </tr>
+                            <tr>
+                                <td>Cable Length</td>
+                                <td>Up to 1200 meters</td>
+                            </tr>
+                            <tr>
+                                <td>Baud Rate</td>
+                                <td>9600 - 115200 bps</td>
+                            </tr>
+                        </table>
+                        <p style="margin-top: 12px; color: var(--accent-green);"><strong>Why FTDI?</strong>
+                            Kernel-native
+                            drivers in Linux. No third-party software.</p>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-exchange-alt"></i></div>
+                            <h3>Alternative: Gateway</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 15px;">When physical wiring modification
+                            is not
+                            possible:</p>
+                        <div class="security-layers">
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-box"></i></div>
+                                <div>
+                                    <h4>Moxa NPort Series</h4>
+                                    <p>Industrial RS485-to-Ethernet converter</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-box"></i></div>
+                                <div>
+                                    <h4>Advantech EKI Series</h4>
+                                    <p>Modbus RTU to Modbus TCP gateway</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 14: Vendor-Locked PLCs -->
+        <section class="slide" id="slide14">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">14 / Vendor-Lock Solutions</span>
+                    <h2 class="slide-title"><i class="fas fa-unlock-alt"></i> Handling Vendor-Locked PLCs</h2>
+                </div>
+                <div class="highlight-box" style="margin-bottom: 20px;">
+                    <h3><i class="fas fa-question-circle"></i> "What if the vendor doesn't share register addresses?"
+                    </h3>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-search"></i></div>
+                            <h3>Strategy 1: Protocol Analysis</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li><strong>Passive Monitoring:</strong> Mirror port captures traffic</li>
+                            <li><strong>Wireshark Analysis:</strong> Identify register addresses</li>
+                            <li><strong>Pattern Recognition:</strong> Correlate with machine state</li>
+                        </ul>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-plug"></i></div>
+                            <h3>Strategy 2: OPC-UA Bridge</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li>Many PLCs expose OPC-UA server</li>
+                            <li>OPC-UA provides standardized tag discovery</li>
+                            <li>No need to know internal register mapping</li>
+                        </ul>
+                    </div>
+                    <div class="card animate-in delay-2">
+                        <div class="card-header">
+                            <div class="card-icon purple"><i class="fas fa-database"></i></div>
+                            <h3>Strategy 3: SCADA Integration</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li>Request MQTT/API export from existing SCADA</li>
+                            <li>Database-level integration (read from historian)</li>
+                        </ul>
+                    </div>
+                    <div class="card animate-in delay-3">
+                        <div class="card-header">
+                            <div class="card-icon orange"><i class="fas fa-wave-square"></i></div>
+                            <h3>Strategy 4: External I/O</h3>
+                        </div>
+                        <ul class="checklist">
+                            <li>Current transformers on motor lines</li>
+                            <li>Proximity sensors for cycle detection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 15: Packet Sniffing -->
+        <section class="slide" id="slide15">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">15 / Packet Analysis</span>
+                    <h2 class="slide-title"><i class="fas fa-network-wired"></i> Protocol Reverse Engineering</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-eye"></i></div>
+                            <h3>Packet Sniffing Process</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 12px;">Capture HMI to PLC packets to
+                            understand
+                            protocol</p>
+                        <div class="code-block">
+                            <span class="comment"># Step 1: Set up mirror port on switch</span>
+                            <span class="comment"># Step 2: Capture with Wireshark/tcpdump</span>
+                            $ tcpdump -i eth0 -w plc_traffic.pcap
+
+                            <span class="comment"># Step 3: Filter Modbus traffic</span>
+                            Wireshark filter: modbus or tcp.port==502
+
+                            <span class="comment"># Step 4: Analyze read/write commands</span>
+                            <span class="comment"># FC 03 = Read Holding Registers</span>
+                            <span class="comment"># FC 01 = Read Coils</span>
+                        </div>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-list-ol"></i></div>
+                            <h3>Practical Workflow</h3>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Capture</h4>
+                                <p>30 min traffic recording while HMI running</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Analyze</h4>
+                                <p>Identify register addresses in packets</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Correlate</h4>
+                                <p>Match values with physical machine state</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Document</h4>
+                                <p>Create tag mapping document</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Configure</h4>
+                                <p>Setup ROVO Edge with tag config</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-box" style="margin-top: 15px;">
+                    <h3><i class="fas fa-balance-scale"></i> Legal & Ethical</h3>
+                    <p>Packet analysis is performed on the <strong>customer's own network</strong> with proper
+                        authorization.
+                        This is standard practice for industrial system integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 16: Register Mapping -->
+        <section class="slide" id="slide16">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">16 / Data Mapping</span>
+                    <h2 class="slide-title"><i class="fas fa-map"></i> Register Mapping by Brand</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-list-alt"></i></div>
+                            <h3>Modbus Register Types</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Register Type</th>
+                                <th>Address</th>
+                                <th>Data Type</th>
+                            </tr>
+                            <tr>
+                                <td>Coils (M bits)</td>
+                                <td>0xxxx</td>
+                                <td>Boolean</td>
+                            </tr>
+                            <tr>
+                                <td>Discrete Inputs</td>
+                                <td>1xxxx</td>
+                                <td>Boolean</td>
+                            </tr>
+                            <tr>
+                                <td>Input Registers</td>
+                                <td>3xxxx</td>
+                                <td>16-bit Int</td>
+                            </tr>
+                            <tr>
+                                <td>Holding Registers (D)</td>
+                                <td>4xxxx</td>
+                                <td>16-bit Int</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-industry"></i></div>
+                            <h3>Brand-Specific Mapping</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>PLC Brand</th>
+                                <th>D0 Address</th>
+                                <th>M0 Address</th>
+                            </tr>
+                            <tr>
+                                <td>Mitsubishi FX5U</td>
+                                <td>0</td>
+                                <td>8192</td>
+                            </tr>
+                            <tr>
+                                <td>Delta DVP</td>
+                                <td>4096</td>
+                                <td>2048</td>
+                            </tr>
+                            <tr>
+                                <td>Omron CP2E</td>
+                                <td>0</td>
+                                <td>CIO area</td>
+                            </tr>
+                            <tr>
+                                <td>Siemens S7</td>
+                                <td>DB blocks</td>
+                                <td>Memory area</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="highlight-box" style="margin-top: 15px;">
+                    <h3><i class="fas fa-cog"></i> One-Time Configuration</h3>
+                    <div class="code-block" style="margin-top: 8px;">
+                        {"plc_id": "PRESS_01", "ip": "192.168.3.250", "protocol": "modbus_tcp",
+                        "tags": [{"name": "cycle_count", "address": 0, "type": "uint16"},
+                        {"name": "temperature", "address": 1, "type": "int16", "scale": 0.1}]}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 17: Dashboard -->
+        <section class="slide" id="slide17">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">17 / Dashboard</span>
+                    <h2 class="slide-title"><i class="fas fa-desktop"></i> WebSocket Real-Time Dashboard</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                            <h3>Why WebSocket?</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Feature</th>
+                                <th>WebSocket</th>
+                                <th>SSE</th>
+                            </tr>
+                            <tr>
+                                <td>Direction</td>
+                                <td><span class="badge success">Bidirectional</span></td>
+                                <td>One-way</td>
+                            </tr>
+                            <tr>
+                                <td>Binary Data</td>
+                                <td><span class="badge success">Supported</span></td>
+                                <td>Text only</td>
+                            </tr>
+                            <tr>
+                                <td>Control Commands</td>
+                                <td><span class="badge success">Native</span></td>
+                                <td>Needs HTTP</td>
+                            </tr>
+                            <tr>
+                                <td>Industrial Use</td>
+                                <td><span class="badge success">Preferred</span></td>
+                                <td>Limited</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-layer-group"></i></div>
+                            <h3>Technology Stack</h3>
+                        </div>
+                        <div class="security-layers">
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fab fa-react"></i></div>
+                                <div>
+                                    <h4>React.js</h4>
+                                    <p>Component-based reactive UI</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-chart-line"></i></div>
+                                <div>
+                                    <h4>Chart.js / D3.js</h4>
+                                    <p>Real-time animated charts</p>
+                                </div>
+                            </div>
+                            <div class="security-layer">
+                                <div class="layer-icon"><i class="fas fa-plug"></i></div>
+                                <div>
+                                    <h4>Socket.io</h4>
+                                    <p>WebSocket with automatic fallback</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-grid three-col" style="margin-top: 15px;">
+                    <div class="stat-card">
+                        <div class="stat-value">&lt;100ms</div>
+                        <div class="stat-label">Refresh Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">PWA</div>
+                        <div class="stat-label">Progressive Web App</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Mobile Responsive</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 18: Implementation Proof -->
+        <section class="slide" id="slide18">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">18 / Implementation</span>
+                    <h2 class="slide-title"><i class="fas fa-code"></i> Working Implementation</h2>
+                </div>
+                <div class="content-grid two-col">
+                    <div class="card animate-in">
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                            <h3>Mitsubishi FX5U-32M</h3>
+                        </div>
+                        <div class="code-block">
+                            <span class="keyword">from</span> pymodbus.client <span class="keyword">import</span>
+                            ModbusTcpClient
+
+                            client = ModbusTcpClient(<span class="string">'192.168.3.250'</span>)
+                            client.connect()
+
+                            <span class="comment"># Read D0, D1 (Holding Registers at addr 0)</span>
+                            rr = client.read_holding_registers(address=0, count=2)
+                            d0, d1 = rr.registers[0], rr.registers[1]
+
+                            <span class="comment"># Read M0 (Coil at address 8192)</span>
+                            rc = client.read_coils(address=8192, count=1)
+                            m0 = rc.bits[0]
+                        </div>
+                        <p style="margin-top: 10px;"><span class="badge success">Implemented</span></p>
+                    </div>
+                    <div class="card animate-in delay-1">
+                        <div class="card-header">
+                            <div class="card-icon green"><i class="fas fa-microchip"></i></div>
+                            <h3>Delta DVP12SE</h3>
+                        </div>
+                        <div class="code-block">
+                            <span class="comment"># Delta D0 starts at address 4096</span>
+                            rr = client.read_holding_registers(address=4096, count=2)
+                            d0, d1 = rr.registers[0], rr.registers[1]
+
+                            <span class="comment"># Delta M0 starts at address 2048</span>
+                            rc = client.read_coils(address=2048, count=1)
+                            m0 = rc.bits[0]
+                        </div>
+                        <p style="margin-top: 10px;"><span class="badge success">Implemented</span></p>
+                    </div>
+                    <div class="card animate-in delay-2">
+                        <div class="card-header">
+                            <div class="card-icon purple"><i class="fas fa-microchip"></i></div>
+                            <h3>Omron CP2E-N30DT-D</h3>
+                        </div>
+                        <div class="code-block">
+                            <span class="comment"># Omron D0 at address 0, 10Hz polling</span>
+                            rr = client.read_holding_registers(address=0, count=10)
+                            <span class="comment"># D0-D9 values in rr.registers</span>
+                        </div>
+                        <p style="margin-top: 10px;"><span class="badge success">Implemented</span></p>
+                    </div>
+                    <div class="card animate-in delay-3">
+                        <div class="card-header">
+                            <div class="card-icon orange"><i class="fas fa-microchip"></i></div>
+                            <h3>Siemens S7-1200</h3>
+                        </div>
+                        <div class="code-block">
+                            <span class="keyword">import</span> snap7
+                            client = snap7.Client()
+                            client.connect(<span class="string">'192.168.0.1'</span>, 0, 1)
+                            data = client.db_read(1, 0, 10)
+                        </div>
+                        <p style="margin-top: 10px;"><span class="badge warning">In Progress</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 19: Industry Standards -->
+        <section class="slide" id="slide19">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">19 / Standards</span>
+                    <h2 class="slide-title"><i class="fas fa-certificate"></i> Industry Compliance</h2>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Standard</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>IEC 61158</strong></td>
+                                <td>Industrial Modbus Protocol Standard</td>
+                                <td><span class="badge success">Compliant</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IEC 62541</strong></td>
+                                <td>OPC Unified Architecture</td>
+                                <td><span class="badge success">Supported</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>OASIS MQTT</strong></td>
+                                <td>IoT Messaging Standard</td>
+                                <td><span class="badge success">Supported</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>RFC 8446</strong></td>
+                                <td>TLS 1.3 Transport Security</td>
+                                <td><span class="badge success">Implemented</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>IEC 62443</strong></td>
+                                <td>Industrial Cybersecurity</td>
+                                <td><span class="badge primary">Designed For</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISA-95</strong></td>
+                                <td>Enterprise-Control Integration</td>
+                                <td><span class="badge success">Compatible</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <h3><i class="fas fa-lock-open"></i> 100% Open Source - No Vendor Lock-in</h3>
+                    <p>All components use internationally recognized standards and open-source implementations with
+                        permissive
+                        licenses.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 20: Q&A -->
+        <section class="slide qa-slide" id="slide20">
+            <div class="slide-content">
+                <h1>Questions & Discussion</h1>
+                <p class="subtitle" style="font-size: 18px; color: var(--text-secondary); margin-top: 10px;">Thank you
+                    for your
+                    attention</p>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <h4>Email</h4>
+                        <p>contact@rovoautomation.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon"><i class="fas fa-phone"></i></div>
+                        <h4>Phone</h4>
+                        <p>+91-XXXXXXXXXX</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon"><i class="fas fa-globe"></i></div>
+                        <h4>Website</h4>
+                        <p>www.rovoautomation.com</p>
+                    </div>
+                </div>
+                <div style="margin-top: 35px;">
+                    <p style="color: var(--text-secondary); font-size: 14px;"><i class="fas fa-file-alt"
+                            style="color: var(--accent-blue);"></i> Refer to Defense Q&A Document for detailed technical
+                        answers
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 20;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            slides.forEach(s => s.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+            document.getElementById('progressBar').style.width = `${(currentSlide / totalSlides) * 100}%`;
+        }
+
+        function changeSlide(d) { currentSlide += d; showSlide(currentSlide); }
+
+        document.getElementById('prevBtn').addEventListener('click', () => changeSlide(-1));
+        document.getElementById('nextBtn').addEventListener('click', () => changeSlide(1));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') changeSlide(1);
+            else if (e.key === 'ArrowLeft') changeSlide(-1);
+            else if (e.key === 'Home') { currentSlide = 1; showSlide(1); }
+            else if (e.key === 'End') { currentSlide = totalSlides; showSlide(totalSlides); }
+        });
+
+        showSlide(1);
+    </script>
+</body>
+
+</html>
